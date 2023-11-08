@@ -1,0 +1,30 @@
+CREATE TABLE `colaboradores` (
+  `id_colaborador` integer PRIMARY KEY,
+  `nome_colaborador` varchar(55),
+  `cpf_colaborador` integer
+);
+
+CREATE TABLE `funcionarios` (
+  `id_funcionarios` integer PRIMARY KEY,
+  `nome_func` varchar(55),
+  `matricula_func` integer,
+  `funcao` varchar(55),
+  `setor` varchar(55)
+);
+
+CREATE TABLE `aluno` (
+  `id_aluno` integer PRIMARY KEY,
+  `matricula_aluno` integer,
+  `curso` varchar(55),
+  `turno` varchar(55),
+  `nome_aluno` varchar(55),
+  `cpf_aluno` integer
+);
+
+CREATE TABLE `cursos` (
+  `id_cursos` integer PRIMARY KEY,
+  `nome` varchar(255),
+  `carga_horaria` varchar(255)
+);
+
+ALTER TABLE `cursos` ADD FOREIGN KEY (`id_cursos`) REFERENCES `aluno` (`id_aluno`);
